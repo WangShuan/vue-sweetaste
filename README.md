@@ -28,6 +28,7 @@ vue create vue-sweetaste
 ## 安裝依賴
 
 有用到 bootstrap 的某些樣式 所以需要安裝 `bootstrap` `popper.js` `jquery`
+
 有用到 ajax 所以需要安裝 `axios` `vue-axios@2.1.5`
 
 ## 項目結構
