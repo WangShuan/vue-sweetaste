@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none; /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+  -moz-appearance: none; /* FireFox */
+  appearance: none;
+}
+
+input[type="checkbox"] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  padding: initial;
+  border: initial;
+  width: 16px;
+  height: 16px;
+  margin: 3px;
+  vertical-align: text-bottom;
+}

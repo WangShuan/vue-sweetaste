@@ -1,0 +1,133 @@
+@import "~bootstrap/scss/functions";
+@import "../helper/variable";
+@import "~bootstrap/scss/bootstrap";
+
+@import "../helper/mixin";
+@import "../helper/breakpoint";
+@import "../helper/base";
+@import "../helper/utilities";
+@import "../helper/layout";
+
+.mainImg {
+  height: 550px;
+  margin-bottom: 247px;
+
+  @include bgImgCover("~@/assets/images/main1.jpeg");
+  @include breakpoint-xl {
+    height: 496px;
+  }
+  @include breakpoint-lg {
+    width: 100%;
+  }
+  @include breakpoint-sm {
+    height: 277px;
+    margin-bottom: 300px;
+  }
+}
+
+.imgBtn {
+  &-group {
+    justify-content: center;
+    flex-basis: 80%;
+    max-width: 80%;
+    @include breakpoint-xl {
+      flex-basis: 83.33333%;
+      max-width: 100% * 10/12;
+    }
+    @include breakpoint-sm {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  height: 280px;
+  width: calc(100% / 3);
+  float: left;
+  margin-top: 407px;
+  background-color: $primary;
+  color: #fff;
+  border-left: 1px solid #fff;
+  font: normal normal 300 28px/34px PingFang TC;
+
+  @include breakpoint-xl {
+    height: 256px;
+    font: normal normal 300 24px/30px PingFang TC;
+  }
+  @include breakpoint-sm {
+    height: 180px;
+    margin-top: 277px;
+    font: normal normal 300 20px/24px PingFang TC;
+  }
+  &:hover {
+    background-color: $secondary;
+    color: $primary;
+    border: 0;
+    font: normal normal 600 28px/34px PingFang TC;
+    @include breakpoint-xl {
+      font: normal normal 600 24px/30px PingFang TC;
+    }
+    @include breakpoint-sm {
+      font: normal normal 600 20px/24px PingFang TC;
+    }
+  }
+  &-bg {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 20%;
+    filter: alpha(opacity=20);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+  &-text {
+    width: 1em;
+    margin: 0;
+    position: relative;
+    top: calc(-280px + 72px);
+    left: calc(50% - 0.5em);
+    @include breakpoint-xl {
+      top: calc(-256px + 68px);
+    }
+    @include breakpoint-sm {
+      top: calc(-180px + 42px);
+    }
+  }
+}
+
+.bgPositionRight {
+  background-position: right;
+  padding: 0;
+  padding-right: calc(50% + 42px);
+  @include breakpoint-xl {
+    padding-right: 50%;
+  }
+  @include breakpoint-sm {
+    background-position: unset;
+    padding: unset;
+    padding-right: unset;
+  }
+}
+
+.centerImg {
+  width: 89px;
+  margin-top: 95px;
+  margin-bottom: 80px;
+}
+
+.centerFlatImg {
+  height: 60px;
+  margin: 30px auto;
+}
+
+.cardGroup {
+  margin-bottom: 60px;
+  @include breakpoint-md {
+    margin-bottom: 30px;
+  }
+}

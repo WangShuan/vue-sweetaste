@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/functions";
+@import "../helper/variable";
+@import "~bootstrap/scss/bootstrap";
+
+@import "../helper/mixin";
+@import "../helper/breakpoint";
+@import "../helper/base";
+@import "../helper/utilities";
+@import "../helper/layout";
+
+.content {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint-md {
+    flex-wrap: wrap;
+  }
+  @include breakpoint-sm {
+    padding: 0;
+  }
+}

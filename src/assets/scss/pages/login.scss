@@ -1,0 +1,134 @@
+@import "../variable";
+@import "../normalize";
+@import "../mixin";
+@import "../breakpoint";
+@import "../base";
+@import "../utilities";
+@import "../layout";
+
+.content {
+  max-width: 780px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto 60px;
+  @include breakpoint-md {
+    margin: 30px 30px 60px;
+  }
+  @include breakpoint-sm {
+    margin: 0;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}
+
+.login {
+  width: 50%;
+  background-color: $primary;
+  color: $light;
+  text-align: center;
+  @include breakpoint-sm {
+    width: 100%;
+  }
+  &-title {
+    font: normal normal 600 36px/36px PingFang TC;
+    margin: 40px auto;
+    line-height: 50px;
+    @include breakpoint-sm {
+      margin: 30px auto;
+      margin-bottom: 60px + 116px;
+    }
+  }
+  &-input {
+    width: calc(100% - 64px);
+    padding: 19px;
+    padding-left: 0;
+    border: 0;
+    margin-bottom: 16px;
+    &-icon {
+      color: $primary;
+      background-color: white;
+      width: 64px;
+      height: 56px;
+      padding: 16px;
+    }
+  }
+  &-checkbox {
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 22px;
+  }
+  &-btn {
+    background-color: $secondary;
+    color: $primary;
+    font: normal normal 600 24px/20px PingFang TC;
+    padding: 22.5px 0;
+    margin: 0 auto;
+  }
+}
+
+.connect {
+  background-color: $light;
+  width: 50%;
+  text-align: center;
+  font: normal normal 300 24px/36px PingFang TC;
+  color: #8da291;
+  @include breakpoint-sm {
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    top: 110px;
+  }
+  &-title {
+    font-weight: 300;
+    margin: 40px auto;
+  }
+  &-btnGroup {
+    padding: 0 30px 24px;
+    @include breakpoint-sm {
+      padding: 0;
+    }
+    &-item {
+      background-color: #fff;
+      height: 56px;
+      width: 100%;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      &-icon {
+        margin: 0 auto;
+      }
+      .facebook {
+        height: 21px;
+        @include breakpoint-sm {
+          height: 16px;
+        }
+      }
+      .google {
+        height: 31px;
+        @include breakpoint-sm {
+          height: 24px;
+        }
+      }
+      .yahoo {
+        height: 22px;
+        @include breakpoint-sm {
+          height: 17px;
+        }
+      }
+      @include breakpoint-sm {
+        width: calc(100% / 3);
+        float: left;
+        margin: 0;
+        border: 1px solid $light;
+      }
+    }
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 30px;
+}

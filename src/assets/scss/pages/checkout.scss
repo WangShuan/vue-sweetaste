@@ -1,0 +1,226 @@
+@import "../variable";
+@import "../normalize";
+@import "../mixin";
+@import "../breakpoint";
+@import "../base";
+@import "../utilities";
+@import "../layout";
+
+.content {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  @include breakpoint-md {
+    flex-wrap: wrap;
+  }
+  @include breakpoint-customize(652px) {
+    padding: 0;
+  }
+}
+
+///////// checkout-1
+.orderSummaryContent {
+  margin-left: 20px;
+  @include breakpoint-md {
+    margin-left: 10px;
+  }
+  @include breakpoint-customize(652px) {
+    display: none;
+  }
+}
+
+.orderSummary {
+  width: 300px;
+  color: #8da291;
+  border: 1px solid $light;
+  @include breakpoint-customize(652px) {
+    width: 100%;
+  }
+  &-mt {
+    margin-top: 20px;
+  }
+  &-title {
+    background-color: $light;
+    font: normal normal 600 24px/20px PingFang TC;
+    padding: 16px 0;
+    text-align: center;
+  }
+  &-body {
+    padding: 16px 20px;
+  }
+  &-text {
+    font: normal normal 300 16px/20px PingFang TC;
+    margin-bottom: 8px;
+  }
+  &-boldText {
+    font: normal normal 600 20px/20px PingFang TC;
+    margin-top: 16px;
+  }
+  &-list {
+    padding: 10px 0;
+    &-title {
+      background-color: $light;
+      font: normal normal 600 24px/20px PingFang TC;
+      padding: 16px 0;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+  }
+  &-item {
+    display: flex;
+    justify-content: left;
+    padding: 10px 16px;
+    &-img {
+      width: 120px;
+      height: 80px;
+      margin-right: 20px;
+      @include bgImgCover("~@/assets/images/card8.jpeg");
+    }
+    &-title {
+      line-height: 22px;
+      margin-top: 16px;
+      font: normal normal 300 16px/20px PingFang TC;
+    }
+    &-totalPrice {
+      line-height: 30px;
+      font: normal normal 500 20px/20px PingFang TC;
+    }
+  }
+}
+
+.form {
+  margin-top: 40px;
+  margin-bottom: 42px;
+  @include breakpoint-md {
+    margin-bottom: 92px;
+  }
+  @include breakpoint-customize(652px) {
+    margin-bottom: 80px;
+  }
+  &-control {
+    width: 100%;
+  }
+  &-label {
+    font: normal normal 600 20px/20px PingFang TC;
+  }
+  &-input {
+    display: block;
+    margin: 8px 0 16px;
+    width: 100%;
+    padding: 20px 16px;
+    border: 0;
+    background-color: $light;
+    &::placeholder {
+      color: #8da291;
+    }
+  }
+  &-btnGroup {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &-btn {
+    padding: 14px 0;
+    line-height: 28px;
+    color: $light;
+    text-align: center;
+    background-color: $primary;
+    font: normal normal 600 20px/20px PingFang TC;
+    border: 1px solid $light;
+    width: 50%;
+    float: left;
+    &-active {
+      background-color: $light;
+      color: $primary;
+    }
+  }
+  &-submit {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 0 -40px;
+    font: normal normal 600 24px/20px PingFang TC;
+    line-height: 33px;
+    text-align: center;
+    background-color: $secondary;
+    @include breakpoint-md {
+      margin: 0 -30px;
+    }
+  }
+  .w-50 {
+    width: calc(50% - 8px);
+    @include breakpoint-md {
+      width: calc(50% - 4px);
+    }
+  }
+  .select-mb {
+    margin-bottom: 0px;
+  }
+  select {
+    color: #8da291;
+  }
+}
+
+///////// checkout-2
+.input-icon {
+  float: right;
+  margin-top: -56px;
+  margin-right: 16px;
+  color: $primary;
+  > span {
+    font-size: 20px;
+  }
+}
+
+///////// checkout-success
+.mainImg {
+  width: 940px;
+  height: 496px;
+  margin-bottom: 60px;
+  padding: 128px 0 116px;
+  @include bgImgCover("~@/assets/images/main3.jpeg");
+  @include breakpoint-lg {
+    width: 100vw;
+  }
+  @include breakpoint-md {
+    margin: 0;
+  }
+  @include breakpoint-sm {
+    position: relative;
+    height: 518px;
+    padding: 200px 0;
+  }
+  &-content {
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include breakpoint-md {
+      width: 30vw;
+    }
+    @include breakpoint-sm {
+      width: 189px;
+    }
+  }
+  &-titleImg {
+    width: 189px;
+    height: 45px;
+    margin: 30px 0 51px;
+  }
+  &-btn {
+    width: 100%;
+    line-height: 33px;
+    padding: 22.5px 0;
+    background-color: #ffe180;
+    display: block;
+    font: normal normal 600 24px/20px PingFang TC;
+    text-align: center;
+    @include breakpoint-sm {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+// 背景置中裁成符合大小
+@mixin bgImgCover($imgUrl) {
+  background-image: url($imgUrl);
+  background-position: center;
+  background-size: cover;
+}

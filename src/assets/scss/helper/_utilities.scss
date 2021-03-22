@@ -1,0 +1,74 @@
+.sm-px0 {
+  @include breakpoint-sm {
+    padding: 0;
+  }
+}
+
+.sm-none {
+  display: block !important;
+  @include breakpoint-sm {
+    display: none !important;
+  }
+}
+.sm-block {
+  display: none !important;
+  @include breakpoint-sm {
+    display: block !important;
+  }
+}
+
+.md-none {
+  display: block !important;
+  @include breakpoint-md {
+    display: none !important;
+  }
+}
+.md-block {
+  display: none !important;
+  @include breakpoint-md {
+    display: block !important;
+  }
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  @include breakpoint-sm {
+    flex-wrap: wrap;
+  }
+}
+
+.border-right {
+  border-right: 1px solid $light;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bg-primary {
+  background-color: $primary;
+  color: $light;
+}

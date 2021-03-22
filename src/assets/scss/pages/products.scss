@@ -1,0 +1,72 @@
+@import "~bootstrap/scss/functions";
+@import "../helper/variable";
+@import "~bootstrap/scss/bootstrap";
+
+@import "../helper/mixin";
+@import "../helper/breakpoint";
+@import "../helper/base";
+@import "../helper/utilities";
+@import "../helper/layout";
+
+.mainImg {
+  height: 550px;
+  padding: 40px;
+  margin-bottom: 60px;
+  @include bgImgCover("~@/assets/images/main2.jpeg");
+  @include breakpoint-xl {
+    height: 496px;
+  }
+  @include breakpoint-lg {
+    width: 100%;
+  }
+  @include breakpoint-md {
+    margin: 0;
+  }
+  @include breakpoint-sm {
+    height: 277px;
+    padding: 30px;
+  }
+  &-titleImg {
+    width: 89px;
+    @include breakpoint-sm {
+      width: 60px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include breakpoint-lg {
+    display: unset;
+  }
+  @include breakpoint-sm {
+    display: inline-block;
+  }
+}
+
+.cardGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 300px);
+  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-right: -10px;
+  @include breakpoint-lg {
+    width: 100%;
+    max-width: 100vw;
+  }
+  @include breakpoint-sm {
+    margin-top: 30px;
+    margin-bottom: -30px;
+  }
+}
+
+.l-card {
+  width: 253px;
+  @include breakpoint-xl {
+    width: 300px;
+  }
+}
