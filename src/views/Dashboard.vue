@@ -64,9 +64,11 @@
             </div>
             <router-link class="l-header-icon" to="/cart">
               <span class="material-icons"> shopping_cart </span>
-              <small v-if="totalQty > 0" class="cartBadge bg-secondary">{{
-                totalQty
-              }}</small>
+              <small
+                v-if="totalQty > 0"
+                class="mobile-cartBadge bg-secondary"
+                >{{ totalQty }}</small
+              >
             </router-link>
           </div>
         </div>

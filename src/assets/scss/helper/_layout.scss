@@ -37,6 +37,16 @@
     top: 6px;
     right: -30px;
   }
+  .mobile-cartBadge {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    line-height: 16px;
+    text-align: center;
+  }
   .cartBadge {
     position: absolute;
     right: 25px;
