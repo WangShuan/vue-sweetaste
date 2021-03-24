@@ -151,101 +151,19 @@ export default {
         { name: "人氣推薦", path: "popular-recommendation" },
         { name: "新品上市", path: "new-arrival" },
       ],
-      products: [
-        {
-          category: "本日精選",
-          id: "-Wksl_mamnasde4HiNeU",
-          imageUrl: "https://bit.ly/2QbVsVR",
-          is_enabled: 1,
-          origin_price: "130",
-          price: "120",
-          title: "藍莓布丁",
-          unit: "杯",
-          num: 1,
-        },
-        {
-          category: "人氣推薦",
-          id: "-weqljkljlk-wemcxzpiwq",
-          imageUrl: "https://bit.ly/2QiWeQW",
-          is_enabled: 1,
-          origin_price: "130",
-          price: "120",
-          title: "綜合水果布丁",
-          unit: "杯",
-          num: 1,
-        },
-        {
-          category: "本日精選",
-          id: "-213lhk-mxooxosad",
-          imageUrl:
-            "https://images.unsplash.com/photo-1611524021194-c6acb2df869f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80",
-          is_enabled: 1,
-          origin_price: "130",
-          price: "130",
-          title: "栗子派",
-          unit: "個",
-          num: 1,
-        },
-        {
-          category: "新品上市",
-          id: "-Wksl_mamnasde4qweseU",
-          imageUrl:
-            "https://images.unsplash.com/photo-1603032305813-be7441bc1037?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
-          is_enabled: 1,
-          origin_price: "170",
-          price: "160",
-          title: "黑糖蛋糕",
-          unit: "個",
-          num: 1,
-        },
-        {
-          category: "新品上市",
-          id: "-Wldl_12mcl123d38hdw",
-          imageUrl: "https://bit.ly/2Dwoxd7",
-          is_enabled: 1,
-          origin_price: "430",
-          price: "389",
-          title: "6吋塔塔乳酪",
-          unit: "個",
-          num: 1,
-        },
-        {
-          category: "人氣推薦",
-          id: "-Wksl_mamn2zBjQuqaseU",
-          imageUrl: "https://bit.ly/2zBjQuq",
-          is_enabled: 1,
-          origin_price: "80",
-          price: "60",
-          title: "招牌多那茲",
-          unit: "個",
-          num: 1,
-        },
-        {
-          category: "新品上市",
-          id: "-Wksl_mamnasde42zBDAxX",
-          imageUrl: "https://bit.ly/2zBDAxX",
-          is_enabled: 1,
-          origin_price: "130",
-          price: "130",
-          title: "蔓越莓蛋糕",
-          unit: "塊",
-          num: 1,
-        },
-        {
-          category: "人氣推薦",
-          id: "-Wksl_2zKOP7we4HiNeU",
-          imageUrl: "https://bit.ly/2zKOP7w",
-          is_enabled: 1,
-          origin_price: "170",
-          price: "150",
-          title: "草莓田園派",
-          unit: "個",
-          num: 1,
-        },
-      ],
-      randoms: [],
       key: 0,
+      products: [],
     };
+  },
+  computed: {
+    randoms: function () {
+      let arr = [];
+      for (var i = 0; i < 3; i++) {
+        let j = Math.floor(Math.random() * Math.floor(this.products.length));
+        arr.push(this.products[j]);
+      }
+      return arr;
+    },
   },
   methods: {
     goPage(item) {
@@ -265,18 +183,7 @@ export default {
   },
   created() {
     const vm = this;
-    vm.$http
-      .get("https://vue-course-api.hexschool.io/api/sweetaste/products")
-      .then((res) => {
-        res.data.products.forEach((item) => {
-          vm.products.push(item);
-        });
-      });
-    let arr = vm.products;
-    for (let i = 0; i < 3; i++) {
-      const ran = Math.floor(Math.random() * arr.length);
-      vm.randoms.push(arr.splice(ran, 1)[0]);
-    }
+    vm.products = vm.$parent.products;
   },
 };
 </script>

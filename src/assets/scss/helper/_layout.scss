@@ -211,7 +211,8 @@
   color: $primary;
   @include breakpoint-lg {
     margin: 0 auto 20px;
-    display: -webkit-inline-box;
+    display: flex;
+    width: 100%;
   }
   @include breakpoint-sm {
     margin: 0;
@@ -424,6 +425,7 @@
   z-index: 99999;
   position: relative;
 }
+
 .l-stepbar {
   width: 180px;
   display: flex;
@@ -507,8 +509,11 @@
 }
 
 .l-cartList {
-  width: 620px;
   text-align: center;
+  width: 65%;
+  @include breakpoint-lg {
+    width: 620px;
+  }
   @include breakpoint-lg {
     margin: 0 10px;
   }
@@ -549,12 +554,19 @@
         height: 106px;
         margin-right: 16px;
       }
+      @include breakpoint-xs {
+        width: 45%;
+      }
     }
     &-title {
       font: normal normal 300 20px/20px PingFang TC;
       text-align: left;
       line-height: 28px;
       margin: 28px 0;
+      width: 20%;
+      @include breakpoint-md {
+        width: unset;
+      }
       @include breakpoint-sm {
         margin: 0;
         height: 50px;
@@ -569,6 +581,9 @@
         left: 157px + 16px;
         top: 58px;
       }
+      @include breakpoint-xs {
+        left: 50%;
+      }
       &-btn {
         width: 46px;
         height: 48px;
@@ -576,6 +591,9 @@
         line-height: 48px;
         border: 1px solid $light;
         color: $primary;
+        &:hover {
+          text-decoration: none;
+        }
       }
       &-input {
         width: 46px;
@@ -618,12 +636,14 @@
 }
 
 .l-order {
-  width: 300px;
+  width: 30%;
   background-color: $primary;
   color: $light;
-  height: 193px;
+  height: 193px + 52px;
   padding: 20px 20px 0;
+  position: relative;
   @include breakpoint-lg {
+    width: 300px;
     margin: 0 10px;
     height: 193px;
   }
@@ -658,10 +678,12 @@
     margin: 16px 0;
   }
   &-btn {
+    position: absolute;
+    bottom: 0;
     padding: 16px;
     text-align: center;
-    width: calc(100% + 40px);
-    margin: 0 -20px;
+    width: 100%;
+    margin-left: -20px;
     font: normal normal 600 24px/20px PingFang TC;
     color: $primary;
     background-color: $secondary;
@@ -670,7 +692,7 @@
       width: 100vw;
       margin: 0;
       position: absolute;
-      left: 0;
+      left: -30px;
     }
   }
 }

@@ -1,10 +1,12 @@
-@import "../variable";
-@import "../normalize";
-@import "../mixin";
-@import "../breakpoint";
-@import "../base";
-@import "../utilities";
-@import "../layout";
+@import "~bootstrap/scss/functions";
+@import "../helper/variable";
+@import "~bootstrap/scss/bootstrap";
+
+@import "../helper/mixin";
+@import "../helper/breakpoint";
+@import "../helper/base";
+@import "../helper/utilities";
+@import "../helper/layout";
 
 .content {
   max-width: 780px;
@@ -41,7 +43,7 @@
   }
   &-input {
     width: calc(100% - 64px);
-    padding: 19px;
+    padding: 16px;
     padding-left: 0;
     border: 0;
     margin-bottom: 16px;

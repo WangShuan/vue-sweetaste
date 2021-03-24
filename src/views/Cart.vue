@@ -53,7 +53,9 @@
           <span>總計</span>
           <span>NT$ {{ totalPrice + 300 }}</span>
         </div>
-        <a href="/views/checkout-1.html" class="l-order-btn pointer">結帳</a>
+        <router-link to="/checkout" class="l-order-btn pointer">
+          結帳
+        </router-link>
       </div>
     </div>
     <div v-else class="col-md-12 text-center" style="margin: 30vh 0">
@@ -78,6 +80,8 @@ export default {
     lessQty(item) {
       if (item.qty > 1) {
         item.qty--;
+      } else if (item.qty == 1) {
+        this.delProduct(item);
       }
       this.getTotal();
     },
@@ -105,17 +109,7 @@ export default {
   },
   created() {
     const vm = this;
-    let arr = vm.$parent.cart;
-    var map = new Map();
-    arr.forEach(function (el) {
-      if (map.has(el)) {
-        map.get(el).qty++;
-      } else {
-        map.set(el, Object.assign(el, { qty: 1 }));
-      }
-    });
-    arr = [...map.values()];
-    vm.cart = arr;
+    vm.cart = vm.$parent.cart;
     vm.getTotal();
   },
 };
