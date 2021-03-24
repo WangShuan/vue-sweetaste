@@ -33,4 +33,16 @@ vue create vue-sweetaste
 
 ## 項目結構
 
-`views/Dashboard.vue` 是主要結構樣式 裡面放每個網址共用頭部、底部
+`views/Dashboard.vue` 是主要結構 裡面放每個網址共用頭部、底部 以及所有商品資料
+
+`view/Home.vue` 是首頁 裡面使用 random 隨機抓取首頁最下方三個卡片的商品
+
+`view/Products.vue` 是產品頁面 使用 computed 切換當前顯示的商品類別
+
+`view/Cart.vue` 是購物車頁面 左方式購買商品列表 右方是價格列表 點擊結帳即可前往 Checkout 頁面
+
+`view/Checkout.vue` 是結帳頁面 通過 bootstrap 的表單驗證加手寫 js 驗證表單是否填寫 再執行下一步 切換顯示的表單
+
+`view/Login.vue` 是登入頁面 僅使用 bootstrap 驗證 其他功能皆無
+
+`view/400.vue` 處理錯誤網址頁面
